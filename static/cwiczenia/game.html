@@ -51,7 +51,7 @@
       var times = [];
       var timer;
       var data;
-      var myID = "none"
+      var myID;
       var room;
       var currentTime;
       var myName
@@ -63,25 +63,23 @@
       var recorder = setInterval(displayRecords, 50);
 
       async function getData() {
-        const body = JSON.stringify({ "id": 1 }); // body czyli przesyłane na serwer dane
-        const headers = { "Content-Type": "application/json" }; // nagłowek czyli typ danych
-
-        await fetch("/getData", { method: "post" ,body, headers }) // fetch
+        await fetch("/getData", { method: "get" }) // fetch
           .then((response) => response.text())
           .then((d) => (data = JSON.parse(d)));
         console.log(data);
       }
-      
 
+    function drop() {
+        const body = JSON.stringify({ "id": myID }); // body czyli przesyłane na serwer dane
 
-    // function drop() {
-    //     const body = JSON.stringify({ "id": myID }); // body czyli przesyłane na serwer dane
-
-    //     const headers = { "Content-Type": "application/json" }; // nagłowek czyli typ danych
-
-
-    //     fetch("/drop", { method: "post", body, headers }) // fetch
-    // }
+        const headers = { "Content-Type": "application/json" }; // nagłowek czyli typ danych
+        // console.log(body)
+        fetch("/drop", { method: "post", body, headers }) // fetch
+            .then((response) => response.json())
+            .then(
+                (data) => (myID = data.yourID) // dane odpowiedzi z serwera
+            );
+    }
       
 
 
@@ -99,6 +97,11 @@
           );
       }
 
+
+
+
+
+      
       function uploadScoore() {
         console.log("Finished");
 
@@ -133,34 +136,13 @@
           x.innerHTML = convertTime(time) + "<br> Nowy rekord";
         }
 
-        document.getElementsByClassName("box")[0].style.left ="-10px";
-        document.getElementById("replay").style.top = "-10px";
+        document.getElementsByClassName("box")[0].style.transform =
+          "translate(290px)";
+        document.getElementById("replay").style.transform = "translateY(210px)";
         // transform: translateY(210px);
       }
 
-        function JaChceJeszczeRaz() {
-            let x = document.getElementById("winScreen").style.display = "none"
-            document.getElementsByClassName("box")[0].style.left ="-300px";
-            document.getElementById("replay").style.top = "-220px";
-
-            clearInterval(getter);
-            clearInterval(timer);
-            startClock();
-            console.log("PPPPPPPP")
-            // drop()
-            getter = setInterval(getData, 1000);
-            timer = setInterval(displayTime, 50);
-            functions.randomizer();
-            setTimeout(() => {      
-              fetchMyData(myName)
-            }
-            ,1000)
-            setTimeout(() => {      
-              ok = true
-            },4000)
-        }
-
-        document.getElementById("x").addEventListener("click", function () {
+      document.getElementById("x").addEventListener("click", function () {
         document.getElementById("login").style.display = "none";
         console.log("XXX");
         myName = document.getElementById("name").value;
@@ -189,6 +171,22 @@
         }
 
       });
+
+        function JaChceJeszczeRaz() {
+            clearInterval(getter);
+            clearInterval(timer);
+            startClock();
+            console.log("PPPPPPPP")
+            drop()
+            getter = setInterval(getData, 1000);
+            timer = setInterval(displayTime, 50);
+            functions.randomizer();
+            ok = true
+            fetchMyData(myName)
+
+        }
+
+
 
 
       //CZAS

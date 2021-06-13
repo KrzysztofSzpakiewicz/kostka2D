@@ -60,7 +60,7 @@ label {
   height: 100%;
   width: 100%;
   background-color: black;
-  z-index: 11;
+  z-index: 10;
 }
 #osioll {
   /* height: 220px;
@@ -88,12 +88,9 @@ h4 {
   width: 100%;
 }
 #open:hover + #replay {
-  /* top: -10px; */
   transform: translateY(210px);
 }
 #replay:hover {
-  /* top: -10px; */
-
   transform: translateY(210px);
 }
 #replay {
@@ -133,7 +130,6 @@ th {
   margin-left: 10px;
 }
 #timeBlock {
-  z-index: 10;
   position: absolute;
   top: 20px;
   left: 80px;
@@ -145,34 +141,31 @@ th {
 
 .box:hover + #timeBlock {
   color: black;
-  z-index: 10;
+  z-index: 11;
   transition-duration: 2s;
 }
 
 .box {
-  z-index: 9;
+  z-index: 10;
   background: #ffc000;
   border-radius: 0px 4px 4px 0px;
   left: -300px;
   padding: 4px 4px 4px 0px;
   position: fixed;
   top: 0px;
-  transition-duration: 1s;
+  transition: transform 0.4s;
   width: 320px;
   /* transform: translateX(10px); */
 }
 
 .box:hover {
-  z-index: 9;
-  /* left: -10px; */
-  transition-duration: 1s;
-
+  z-index: 10;
   transform: translateX(290px);
 }
 
 .box .box__content {
   text-align: center;
-  z-index: 9;
+  z-index: 10;
   color: black;
   background: #fff;
   min-height: 700px;
