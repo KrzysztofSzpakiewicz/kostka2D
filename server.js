@@ -15,7 +15,7 @@ var playerID = 0;
 var roomID = 0;
 var records = [];
 var getnum = 0
-app.use(express.static("static/cwiczenia")); // serwuje pozostałe pliki, czyli ćwiczenia
+app.use(express.static("static/game")); // serwuje pozostałe pliki, czyli ćwiczenia
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -31,7 +31,7 @@ coll1.find({}, function (err, docs) {
 });
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname + "/static/cwiczenia/game.html"));
+    res.sendFile(path.join(__dirname + "/static/game/main.html"));
 });
 
 app.post("/getData", function (req, res) {

@@ -87,12 +87,12 @@ h4 {
   bottom: 0;
   width: 100%;
 }
-#open:hover + #replay {
+.extend3:hover + #replay {
   /* top: -10px; */
   transform: translateY(210px);
 }
-#replay:hover {
-  /* top: -10px; */
+.extend2:hover {
+  top: -10px;
 
   transform: translateY(210px);
 }
@@ -143,7 +143,7 @@ th {
   transition-duration: 2s;
 }
 
-.box:hover + #timeBlock {
+.extend1:hover + #timeBlock {
   color: black;
   z-index: 10;
   transition-duration: 2s;
@@ -162,7 +162,7 @@ th {
   /* transform: translateX(10px); */
 }
 
-.box:hover {
+.extend1:hover {
   z-index: 9;
   /* left: -10px; */
   transition-duration: 1s;
@@ -182,4 +182,11 @@ th {
 }
 h1 {
   text-align: center;
+}
+#nick {
+  font-size: 32px;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 80px;
 }
