@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  overflow: hidden;
+}
+#addition {
+  position: absolute;
+  height: 150px;
+  width: 200px;
+  top: 0;
+  background-color: rgb(255, 215, 255);
+  text-align: center;
+  border: 3px solid red;
+  display: flex;
+  flex-direction: column;
+}
+#records {
+  padding-top: 30px;
+}
+img {
+  height: 100%;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  background: #00a896;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+#left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+}
+
+#right {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+}
+#login {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 10;
+}
+#osioll {
+  /* height: 220px;
+  width: 320px;
+  position: absolute;
+  top: 460px;
+  right: 0px; */
+}
+#open {
+  position: absolute;
+  left: 540px;
+  top: -10px;
+  width: 218px;
+  height: 30px;
+  background: white;
+  border: 4px solid #ffc000;
+  border-radius: 6px;
+  vertical-align: text-bottom;
+  color: black;
+}
+h4 {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+#open:hover + #replay {
+  transform: translateY(210px);
+}
+#replay:hover {
+  transform: translateY(210px);
+}
+#replay {
+  position: absolute;
+  left: 540px;
+  top: -220px;
+  width: 218px;
+  height: 200px;
+  background: white;
+  border: 4px solid #ffc000;
+  border-radius: 6px;
+  transition-duration: 1s;
+}
+#winScreen {
+  color: black;
+  position: absolute;
+  top: 218px;
+  left: 500px;
+  width: 300px;
+  height: 150px;
+  background: white;
+  border: 4px solid #ffc000;
+  border-radius: 6px;
+  transition-duration: 2s;
+  display: none;
+  text-align: center;
+  font-size: 32px;
+}
+
+table,
+tr,
+td,
+th {
+  border: 0px solid red;
+  width: 420px;
+  text-align: left;
+  margin-left: 10px;
+}
+#timeBlock {
+  position: absolute;
+  top: 20px;
+  left: 80px;
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  transition-duration: 2s;
+}
+
+.box:hover + #timeBlock {
+  color: black;
+  z-index: 11;
+  transition-duration: 2s;
+}
+
+.box {
+  z-index: 10;
+  background: #ffc000;
+  border-radius: 0px 4px 4px 0px;
+  left: -300px;
+  padding: 4px 4px 4px 0px;
+  position: fixed;
+  top: 0px;
+  transition: transform 0.4s;
+  width: 320px;
+  /* transform: translateX(10px); */
+}
+
+.box:hover {
+  z-index: 10;
+  transform: translateX(290px);
+}
+
+.box .box__content {
+  text-align: center;
+  z-index: 10;
+  color: black;
+  background: #fff;
+  min-height: 700px;
+  padding: 10px;
+  position: relative;
+  padding-top: 50px;
+}
+h1 {
+  text-align: center;
+}
