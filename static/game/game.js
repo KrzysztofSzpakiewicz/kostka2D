@@ -39,7 +39,7 @@ export default class Game {
             function onWindowResize() {
                 this.camera.aspect = window.innerWidth / window.innerHeight;
                 this.camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
             }
             this.renderer.render(this.scene, this.camera);
             this.handleEventListeners();
