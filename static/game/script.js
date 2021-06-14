@@ -120,7 +120,7 @@ document.getElementById("x").addEventListener("click", function () {
     }
     else if (myName == "ds" || myName == "DS" || myName == "Ds" || myName == "dS") {
         startClock();
-        myName = 'XD'
+        myName = 'MistrzDS'
         fetchMyData(myName);
     }
     else {
