@@ -256,7 +256,7 @@ $(document).ready(function () {
             this.scene = new THREE.Scene();
             this.camera = new THREE.PerspectiveCamera(45, 4 / 3, 0.1, 10000);
             this.renderer = new THREE.WebGLRenderer();
-            this.axes = new THREE.AxesHelper(1000);
+            //this.axes = new THREE.AxesHelper(1000);
             this.allElements = [];
             this.fiveElementsTabs = [];
             this.Keys = {
@@ -281,7 +281,7 @@ $(document).ready(function () {
             $("#root").append(this.renderer.domElement);
             this.camera.position.set(500, 500, 0);
             this.camera.lookAt(this.scene.position);
-            this.scene.add(this.axes);
+            //this.scene.add(this.axes);
             this.render();
         }
         render() {
